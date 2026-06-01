@@ -20,13 +20,22 @@ private:
 
 public:
     Viaje(int codigo, DTFecha fecha, string origen, string destino, int asientosPublicados, float precio);
-    ~Viaje();
+
+    int getCodigo();
+    DTFecha getFecha();
+    string getOrigen();
+    string getDestino();
+    int getAsientosPublicados();
+    float getPrecio();
+
     set<DTUsuarioViaje> listarUsuariosViaje(int codigo);
     DTFecha getFecha();
     bool filtroViaje(DTFecha fecha, string origen, string destino);
     bool asientosDisp(int asientos);
     DTConsultaViaje obtenerViajes();
     bool sePuedeReservar(Pasajero *p, int asientos);
+
+    ~Viaje();
 };
 
 #endif

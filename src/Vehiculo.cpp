@@ -9,3 +9,7 @@ Vehiculo::Vehiculo(std::string matricula, int capacidad, std::string marca, std:
 }
 
 Vehiculo::~Vehiculo() {}
+
+set<DTListarViaje> Vehiculo::listarViajesVehiculo(){
+
+}

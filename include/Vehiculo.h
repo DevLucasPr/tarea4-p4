@@ -18,13 +18,19 @@ private:
 
 public:
     Vehiculo(string matricula, int capacidad, string marca, string modelo, TipoVehiculo tipo);
-    ~Vehiculo();
+
+    string getMatricula();
+    int getCapacidad();
+    string getMarca();
+    TipoVehiculo getTipo();
+
     set<DTListarViaje> listarViajesVehiculo();
     DTVehiculosConductor getDTVehiculoConductor();
-    int getCapacidad();
     bool hayViajesConductor(DTFecha fecha);
     bool hayViajesFecha(DTFecha fecha);
     void asociarViaje();
+
+    ~Vehiculo();
 };
 
 #endif
