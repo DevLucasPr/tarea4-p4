@@ -5,6 +5,8 @@
 #include "DTUsuarioViaje.h"
 #include "DTConsultaViaje.h"
 #include "Pasajero.h"
+#include "Reserva.h"
+#include "Vehiculo.h"
 #include <string>
 #include <set>
 using namespace std;
@@ -18,6 +20,9 @@ private:
     int asientosPublicados;
     float precio;
 
+    set<Reserva*> reservas;
+    Vehiculo* vehiculo;
+
 public:
     Viaje(int codigo, DTFecha fecha, string origen, string destino, int asientosPublicados, float precio);
 
@@ -28,11 +33,20 @@ public:
     int getAsientosPublicados();
     float getPrecio();
 
+    void setVehiculo(Vehiculo *v);
+
     set<DTUsuarioViaje> listarUsuariosViaje(int codigo);
-    DTFecha getFecha();
+
+    //ver condicion de la fecha
     bool filtroViaje(DTFecha fecha, string origen, string destino);
+
+
     bool asientosDisp(int asientos);
-    DTConsultaViaje obtenerViajes();
+
+
+    DTConsultaViaje obtenerViajes(int asientos);
+
+
     bool sePuedeReservar(Pasajero *p, int asientos);
 
     ~Viaje();
