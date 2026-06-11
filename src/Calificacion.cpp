@@ -20,10 +20,10 @@ bool Calificacion::existeCalificacion(std::string nicknameCalificado, int codigo
     return existe;
 }
 
-void Calificacion::linkCalifica(Usuario usuarioCalificado){
+void Calificacion::linkCalifica(Usuario* usuarioCalificado){
     this->usuarioCalificado= usuarioCalificado;
 }
 
-void Calificacion::linkReserva(Reserva reservaAsociada){
+void Calificacion::linkReserva(Reserva* reservaAsociada){
     this->reservaAsociada= reservaAsociada;
 }
