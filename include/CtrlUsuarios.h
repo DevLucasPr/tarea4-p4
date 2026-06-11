@@ -16,6 +16,8 @@ private:
 	std::string nicknameMem;
 	static CtrlUsuarios* instancia;
 
+	handlerUsuarios* handlerUsuarios;
+
 	CtrlUsuarios();
 
 public:

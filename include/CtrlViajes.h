@@ -13,6 +13,8 @@ private:
 	int ultimoViaje;
 	static CtrlViajes *instancia;
 
+	HandlerViajes* handlerViajes;
+
 	CtrlViajes();
 
 public:
