@@ -16,6 +16,8 @@ private:
 	CtrlViajes();
 
 public:
+    ~CtrlViajes();
+
 	std::set<DTConsultaViaje> consultarViajes(DTFecha fecha, std::string origen, std::string destino, int asientos);
 	bool generarReserva(std::string nickname, int codigo, int asientos);
 
