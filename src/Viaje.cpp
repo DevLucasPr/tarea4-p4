@@ -27,6 +27,10 @@ float Viaje::getPrecio(){
     return this->precio;
 }
 
+Vehiculo* Viaje::getVehiculo(){
+    return this->vehiculo;
+}
+
 void Viaje::setVehiculo(Vehiculo *v){
     this->vehiculo = v;
 }
