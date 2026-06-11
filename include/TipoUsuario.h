@@ -1,7 +1,7 @@
 #ifndef TIPO_USUARIO_H
 #define TIPO_USUARIO_H
 
-enum TipoUsuario {
+enum class TipoUsuario {
     Conductor,
     Pasajero
 };
