@@ -12,7 +12,7 @@
 
 using namespace std;
 
-class IViajes
+class IControladorViajes
 {
     public:
         virtual bool altaViaje(string matricula, DTFecha fecha, string origen, string destino, int asientos, float precio) = 0;
@@ -21,6 +21,6 @@ class IViajes
         virtual set<DTConsultaViaje> consultarViajes(DTFecha fecha, string origen, string destino, int asientos) = 0;
         virtual set<DTUsuarioViaje> listarUsuariosViaje(int codigo) = 0;
 
-        virtual ~IViajes() = default;
+        virtual ~IControladorViajes() = default;
 };
 #endif
