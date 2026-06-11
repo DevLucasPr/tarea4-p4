@@ -6,13 +6,16 @@
 #include "DTListarViaje.h"
 #include "DTFecha.h"
 
+class Calificacion;
+
 class Usuario {
 protected:
     std::string nickname;
     std::string nombre;
     std::string contrasena;
     std::string email;
-    float calificacionPromedio;
+    std::set<Calificacion*> calificacionesRealizadas;
+    std::set<Calificacion*> calificacionesRecibidas;
 
 public:
     Usuario(std::string nickname, std::string nombre, std::string contrasena, std::string email);
@@ -20,13 +23,14 @@ public:
 
     std::string getNickname();
     std::string getNombre();
+    float getCalificacionProm();
 
     virtual std::set<DTListarViaje*> listarViajesUsuario() = 0;
     virtual bool esPasajero() = 0;
 
     bool existeCalificacion(std::string nicknameCalificado, int codigoMem);
-    void calificarUsuario(int puntaje, DTFecha fechaActual);
-    void linkCalifica();
+    Calificacion* calificarUsuario(int puntaje, DTFecha fechaActual);
+    void linkCalifica(Calificacion* c);
 };
 
 #endif
