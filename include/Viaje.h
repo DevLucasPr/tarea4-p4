@@ -32,6 +32,7 @@ public:
     string getDestino();
     int getAsientosPublicados();
     float getPrecio();
+    Vehiculo* getVehiculo();
 
     void setVehiculo(Vehiculo *v);
 
