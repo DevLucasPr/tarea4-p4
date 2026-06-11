@@ -1,5 +1,5 @@
-#ifndef ICONTROLADORUsuario_H
-#define ICONTROLADORUsuario_H
+#ifndef ICONTROLADORUsuarios_H
+#define ICONTROLADORUsuarios_H
 
 #include "TipoLibreta.h"
 #include "TipoVehiculo.h"
@@ -13,7 +13,7 @@
 
 using namespace std;
 
-class IUsuarios
+class IControladorUsuarios
 {
     public:
         virtual bool altaPasajero(string nickname, string nombre, string contrasena, string email, string ci) = 0;
@@ -29,6 +29,6 @@ class IUsuarios
 
         virtual bool calificarUsuario(string nicknameCalificado, int calificacion) = 0;
 
-        virtual ~IUsuarios() = default;
+        virtual ~IControladorUsuarios() = default;
 };
 #endif
