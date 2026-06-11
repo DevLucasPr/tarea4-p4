@@ -17,7 +17,8 @@ public:
     Calificacion(DTFecha fecha, int puntaje);
     ~Calificacion();
     bool Calificacion::existeCalificacion(std::string nicknameCalificado, int codigoMem);
+    void Calificacion::linkCalifica(Usuario usuarioCalificado);
+    void Calificacion::linkReserva(Reserva reservaAsociada);
 };
 
 #endif
-
