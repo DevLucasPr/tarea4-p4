@@ -4,6 +4,8 @@
 #include "DTFecha.h"
 #include <string>
 
+using namespace std;
+
 class DTListarViaje {
 private:
     int codigo;
