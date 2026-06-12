@@ -5,6 +5,8 @@
 #include <map>
 #include <string>
 
+using namespace std;
+
 class Usuario;
 class Pasajero;
 class Conductor;
