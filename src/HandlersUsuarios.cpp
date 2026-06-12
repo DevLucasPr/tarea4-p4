@@ -9,11 +9,11 @@ HandlersUsuarios* HandlersUsuarios::instancia = nullptr;
 HandlersUsuarios::HandlersUsuarios() {}
 
 HandlersUsuarios::~HandlersUsuarios() {
-    
+
 }
 
 bool HandlersUsuarios::existeUsuario(string nickname) {
-    return usuarios.find(nickname) != usuarios.end();
+    return usuarios.find(nickname) != usuarios.end(); // forma correcta en un map
 }
 
 bool HandlersUsuarios::existePasajero(string nickname) {
@@ -36,14 +36,6 @@ void HandlersUsuarios::agregarPasajero(Pasajero* pasajero) {
 void HandlersUsuarios::agregarConductor(Conductor* conductor) {
     conductores[conductor->getNickname()] = conductor;
     agregarUsuario(conductor);
-}
-
-set<string> HandlersUsuarios::listarUsuarios() {
-    set<string> lista;
-    for (const auto& pair : usuarios) {
-        lista.insert(pair.first);
-    }
-    return lista;
 }
 
 map<string, Usuario*> HandlersUsuarios::getUsuarios() {

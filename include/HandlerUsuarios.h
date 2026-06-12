@@ -28,7 +28,6 @@ public:
 	void agregarUsuario(Usuario* usuario);
 	void agregarPasajero(Pasajero* pasajero);
 	void agregarConductor(Conductor* conductor);
-	std::set<std::string> listarUsuarios();
 	std::map<std::string, Usuario*> getUsuarios();
 	std::map<std::string, Pasajero*> getPasajeros();
 	std::map<std::string, Conductor*> getConductores();
