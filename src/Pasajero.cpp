@@ -1,7 +1,7 @@
 #include "../include/Pasajero.h"
 #include "../include/Reserva.h"
 
-Pasajero::Pasajero(std::string nickname, std::string nombre, std::string contrasena, std::string email, std::string ci)
+Pasajero::Pasajero(string nickname, string nombre, string contrasena, string email, string ci)
     : Usuario(nickname, nombre, contrasena, email) {
     this->ci = ci;
 }
@@ -12,11 +12,11 @@ bool Pasajero::esPasajero() {
     return true;
 }
 
-std::set<DTListarViaje*> Pasajero::listarViajesUsuario() {
-    std::set<DTListarViaje*> viajes;
+//Tendria que recorrer todas las reservas del pasajero
+set<DTListarViaje> Pasajero::listarViajesUsuario() {
+    set<DTListarViaje> viajes;
     for (Reserva* r : this->reservas) {
-        std::set<DTListarViaje*> dts = r->listarViajesReserva();
-        viajes.insert(dts.begin(), dts.end());
+        viajes.insert(r->listarViajesReserva());
     }
     return viajes;
 }
@@ -27,6 +27,6 @@ void Pasajero::linkReserva(int codigoMem, Calificacion* c) {
     }
 }
 
-void Pasajero::addReserva(Reserva* r) {
+void Pasajero::asociarReserva(Reserva* r) {
     this->reservas.insert(r);
 }

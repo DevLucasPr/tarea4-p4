@@ -1,6 +1,5 @@
 #include "../include/HandlerViajes.h"
 
-
 HandlerViajes *HandlerViajes::instancia = nullptr;
 
 HandlerViajes::HandlerViajes() {};

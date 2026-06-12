@@ -36,19 +36,14 @@ public:
 
     void setVehiculo(Vehiculo *v);
 
-    set<DTUsuarioViaje> listarUsuariosViaje(int codigo);
-
-    //ver condicion de la fecha
+    set<DTUsuarioViaje> listarUsuariosViaje(string nicknameExcluido);
     bool filtroViaje(DTFecha fecha, string origen, string destino);
-
-
     bool asientosDisp(int asientos);
-
-
     DTConsultaViaje obtenerViajes(int asientos);
 
-
     bool sePuedeReservar(Pasajero *p, int asientos);
+
+    void asociarReserva(Reserva *reserva);
 
     ~Viaje();
 };

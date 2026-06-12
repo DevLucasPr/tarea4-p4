@@ -5,15 +5,15 @@
 
 class DTVehiculosConductor {
 private:
-  std::string matricula;
-  std::string modelo;
+  string matricula;
+  string modelo;
   int capacidad;
 
 public:
-  DTVehiculosConductor(std::string matricula, std::string modelo, int capacidad);
+  DTVehiculosConductor(string matricula, string modelo, int capacidad);
 
-  std::string getMatricula();
-  std::string getModelo();
+  string getMatricula();
+  string getModelo();
   int getCapacidad();
 };
 

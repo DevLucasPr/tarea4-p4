@@ -7,6 +7,10 @@ Calificacion::Calificacion(DTFecha fecha, int puntaje) {
 
 Calificacion::~Calificacion() {}
 
+int Calificacion::getPuntaje(){
+    return this->puntaje;
+}
+
 bool Calificacion::existeCalificacion(std::string nicknameCalificado, int codigoMem){
     
     bool existe = false;

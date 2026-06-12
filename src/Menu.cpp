@@ -151,7 +151,7 @@ void Menu::generarReserva() {
 
 void Menu::calificarUsuario() {
     //TODO: Coleccion de DTUsuario = controlador->listarUsuarios()
-    std :: set<DTUsuario> usuarios = CtrlUsuarios->listarUsuarios();
+    std :: set<DTUsuario> usuarios = ControladorUsuarios->listarUsuarios();
     //TODO: Recorrer la coleccion y mostrar "> Nickname: xx, Nombre: yyy"
     for (const DTUsuario& usuario : usuarios) {
         std::cout << "> Nickname: "<< usuario.getNickname() 
@@ -175,7 +175,7 @@ void Menu::calificarUsuario() {
 
     //TODO: Coleccion de DTListarViaje = controlador->listarViajes(nickname)
 
-    std :: set<DTListarViaje> viajes = CtrlUsuarios-> listarViajes(nickname);
+    std :: set<DTListarViaje> viajes = ControladorUsuarios-> listarViajes(nickname);
     //TODO: Recorrer la coleccion y mostrar "> Codigo: xx, Fecha: dd/mm/aaaa, Origen: zzz, Destino: www, Conductor: aaa"
      for (const DTListarViaje& viaje : viajes) {
         DTFecha fechaViaje= viaje.getFecha();
@@ -235,7 +235,7 @@ void Menu::calificarUsuario() {
 
     bool calificacionOk = false;
     //TODO: calificacionOk = Controlador->calificarUsuario(nicknameCalificado, calificacion)
-    calificacionOk= CtrlUsuarios->calificarUsuario(nicknameCalificado, calificacion);
+    calificacionOk= ControladorUsuarios->calificarUsuario(nicknameCalificado, calificacion);
 
     if (calificacionOk) {
         std::cout << "Calificacion exitosa.\n";

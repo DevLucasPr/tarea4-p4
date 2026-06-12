@@ -1,5 +1,6 @@
 #include "../include/ControladorViajes.h"
 #include "../include/ControladorFechaActual.h"
+#include "../include/ControladorUsuario.h"
 #include "../include/DTConsultaViaje.h"
 #include "../include/DTFecha.h"
 #include "../include/Fabrica.h"
@@ -19,7 +20,7 @@ ControladorViajes::ControladorViajes() {
 ControladorViajes* ControladorViajes::getInstance(){
     if (instancia == NULL)
     {
-        instancia = new ControladorViajes;
+        instancia = new ControladorViajes();
     }
 }
 
@@ -31,8 +32,8 @@ bool ControladorViajes::generarReserva(string nickname, int codigo, int asientos
 
     DTFecha fechaActual = Fabrica::getInstance()->getIControladorFechaActual()->getFecha();
     Reserva* reserva = new Reserva(asientos, fechaActual);
-    viajeReserva->agregarReserva(reserva);
-    pasajeroReserva->agregarReserva(reserva);
+    viajeReserva->asociarReserva(reserva);
+    pasajeroReserva->asociarReserva(reserva);
     return true;
 }
 
@@ -47,7 +48,7 @@ bool ControladorViajes::altaViaje(string matricula, DTFecha fecha, string origen
     this->ultimoViaje++;
     this->handlerViajes->crearViaje(this->ultimoViaje, fecha, origen, destino, asientos, precio);
     Viaje* viaje = this->handlerViajes->getViaje(this->ultimoViaje);
-    vehiculo->asociarViaje(vehiculo);
+    vehiculo->asociarViaje(viaje);
     viaje->setVehiculo(vehiculo);
     return true;
 }

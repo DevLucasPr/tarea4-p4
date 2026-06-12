@@ -10,26 +10,26 @@ class Calificacion;
 
 class Usuario {
 protected:
-    std::string nickname;
-    std::string nombre;
-    std::string contrasena;
-    std::string email;
-    std::set<Calificacion*> calificacionesRealizadas;
-    std::set<Calificacion*> calificacionesRecibidas;
+    string nickname;
+    string nombre;
+    string contrasena;
+    string email;
+    set<Calificacion*> calificacionesRealizadas;
+    set<Calificacion*> calificacionesRecibidas;
 
     
 public:
-    Usuario(std::string nickname, std::string nombre, std::string contrasena, std::string email);
+    Usuario(string nickname, string nombre, string contrasena, string email);
     virtual ~Usuario();
 
-    std::string getNickname();
-    std::string getNombre();
+    string getNickname();
+    string getNombre();
     float getCalificacionProm();
 
-    virtual std::set<DTListarViaje*> listarViajesUsuario() = 0;
+    virtual set<DTListarViaje> listarViajesUsuario() = 0;
     virtual bool esPasajero() = 0;
 
-    bool existeCalificacion(std::string nicknameCalificado, int codigoMem);
+    bool existeCalificacion(string nicknameCalificado, int codigoMem);
     Calificacion* calificarUsuario(int puntaje, DTFecha fechaActual);
     void linkCalifica(Calificacion* c);
 };

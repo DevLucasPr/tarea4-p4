@@ -4,18 +4,20 @@
 #include "DTFecha.h"
 #include <string>
 
+using namespace std;
+
 class DTDetalleReserva {
 private:
     int asientosReservados;
     DTFecha fecha;
-    std::string pasajero;
+    string pasajero;
 
 public:
-    DTDetalleReserva(int asientosReservados, DTFecha fecha, std::string pasajero);
+    DTDetalleReserva(int asientosReservados, DTFecha fecha, string pasajero);
 
     int getAsientosReservados();
     DTFecha getFecha();
-    std::string getPasajero();
+    string getPasajero();
 };
 
 #endif

@@ -13,8 +13,8 @@ class DTListarViaje;
 class ControladorUsuarios {
 private:
 	int codigoMem;
-	std::string nicknameMem;
-	static ControladorUsuarios* instancia;
+	string nicknameMem;
+	static CtrlUsuarios* instancia;
 
 	handlerUsuarios* handlerUsuarios;
 
@@ -23,13 +23,13 @@ private:
 public:
 	~ControladorUsuarios();
 
-	bool altaPasajero(std::string nickname, std::string nombre, std::string contrasena, std::string email, std::string ci);
-	bool altaConductor(std::string nickname, std::string nombre, std::string contrasena, std::string email, std::set<TipoLibreta> libretas);
-	std::set<DTVehiculosConductor> listarVehiculosConductor(std::string nickname);
-	int registrarVehiculo(std::string nickname, std::string matricula, int capacidad, std::string marca, std::string modelo, TipoVehiculo tipo);
-	std::set<DTListarViaje> listarViajes(std::string nickname);
-	std::set<std::string> listarPasajeros();
-	bool calificarUsuario(std::string nicknameCalificado, int calificacion);
+	bool altaPasajero(string nickname, string nombre, string contrasena, string email, string ci);
+	bool altaConductor(string nickname, string nombre, string contrasena, string email, set<TipoLibreta> libretas);
+	set<DTVehiculosConductor> listarVehiculosConductor(string nickname);
+	int registrarVehiculo(string nickname, string matricula, int capacidad, string marca, string modelo, TipoVehiculo tipo);
+	set<DTListarViaje> listarViajes(string nickname);
+	set<string> listarPasajeros();
+	bool calificarUsuario(string nicknameCalificado, int calificacion);
 
 	static ControladorUsuarios* getInstance();
 };

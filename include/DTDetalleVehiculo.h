@@ -4,21 +4,23 @@
 #include "TipoVehiculo.h"
 #include <string>
 
+using namespace std;
+
 class DTDetalleVehiculo {
 private:
-    std::string matricula;
+    string matricula;
     int capacidad;
-    std::string marca;
-    std::string modelo;
+    string marca;
+    string modelo;
     TipoVehiculo tipo;
 
 public:
-    DTDetalleVehiculo(std::string matricula, int capacidad, std::string marca, std::string modelo, TipoVehiculo tipo);
+    DTDetalleVehiculo(string matricula, int capacidad, string marca, string modelo, TipoVehiculo tipo);
     
-    std::string getMatricula();
+    string getMatricula();
     int getCapacidad();
-    std::string getMarca();
-    std::string getModelo();
+    string getMarca();
+    string getModelo();
     TipoVehiculo getTipo();
 };
 

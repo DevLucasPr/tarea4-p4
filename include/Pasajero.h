@@ -9,17 +9,17 @@ class Reserva;
 
 class Pasajero : public Usuario {
 private:
-    std::string ci;
-    std::set<Reserva*> reservas;
+    string ci;
+    set<Reserva*> reservas;
 
 public:
-    Pasajero(std::string nickname, std::string nombre, std::string contrasena, std::string email, std::string ci);
+    Pasajero(string nickname, string nombre, string contrasena, string email, string ci);
     ~Pasajero();
 
-    std::set<DTListarViaje*> listarViajesUsuario();
+    set<DTListarViaje> listarViajesUsuario();
     bool esPasajero();
     void linkReserva(int codigoMem, Calificacion* c);
-    void addReserva(Reserva* r);
+    void asociarReserva(Reserva* r);
 };
 
 #endif
