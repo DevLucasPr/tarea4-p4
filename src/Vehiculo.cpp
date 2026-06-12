@@ -20,6 +20,10 @@ string Vehiculo::getMarca(){
     return marca;
 };
 
+string Vehiculo::getModelo(){
+    return modelo;
+};
+
 TipoVehiculo Vehiculo::getTipo(){
     return tipo;
 };

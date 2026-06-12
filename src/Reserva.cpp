@@ -13,16 +13,20 @@ DTFecha Reserva::getFecha(){
     return this->fecha;
 }
 
+Pasajero* Reserva::getPasajero() {
+    return this->pasajero;
+}
+
 DTListarViaje Reserva::listarViajesReserva(){
-    return DTListarViaje(viaje.getCodigo(), viaje.getFecha(), viaje.getOrigen(), viaje.getDestino(), viaje.getVehiculo()->getConductor()->getNickname());
+    return DTListarViaje(viaje->getCodigo(), viaje->getFecha(), viaje->getOrigen(), viaje->getDestino(), viaje->getVehiculo()->getConductor()->getNickname());
 }
 
 bool Reserva::estaAsociadoViajeACalif(int codigoMem){
-    return (codigoMem == viaje.getCodigo());
+    return (codigoMem == viaje->getCodigo());
 }
 
-void Reserva::linkReservaViaje(int codigoMem, Calificacion calificacion){
-    if (viaje.getCodigo() == codigoMem) {
+void Reserva::linkReservaViaje(int codigoMem, Calificacion *calificacion){
+    if (viaje->getCodigo() == codigoMem) {
         calificaciones.insert(calificacion);
     }
 }

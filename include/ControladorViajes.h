@@ -16,7 +16,7 @@ using namespace std;
 class DTFecha;
 class DTConsultaViaje;
 
-class ControladorViajes /*: public IControladorViajes*/{
+class ControladorViajes : public IControladorViajes{
 private:
 	ControladorViajes();
 	int codigoMem;

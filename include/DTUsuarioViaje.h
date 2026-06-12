@@ -6,13 +6,13 @@
 
 class DTUsuarioViaje {
 private:
-    std::string nickname;
+    string nickname;
     TipoUsuario tipo;
 
 public:
-    DTUsuarioViaje(std::string nickname, TipoUsuario tipo);
+    DTUsuarioViaje(string nickname, TipoUsuario tipo);
 
-    std::string getNickname();
+    string getNickname();
     TipoUsuario getTipo();
 };
 

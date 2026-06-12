@@ -8,18 +8,18 @@ class DTListarViaje {
 private:
     int codigo;
     DTFecha fecha;
-    std::string origen;
-    std::string destino;
-    std::string conductor;
+    string origen;
+    string destino;
+    string conductor;
 
 public:
-    DTListarViaje(int codigo, DTFecha fecha, std::string origen, std::string destino, std::string conductor);
+    DTListarViaje(int codigo, DTFecha fecha, string origen, string destino, string conductor);
 
     int getCodigo();
     DTFecha getFecha();
-    std::string getOrigen();
-    std::string getDestino();
-    std::string getConductor();
+    string getOrigen();
+    string getDestino();
+    string getConductor();
 
 };
 

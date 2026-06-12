@@ -12,18 +12,18 @@ class Vehiculo;
 
 class Conductor : public Usuario {
 private:
-    std::set<TipoLibreta> libretas;
-    std::set<Vehiculo*> vehiculos;
+    set<TipoLibreta> libretas;
+    set<Vehiculo*> vehiculos;
 
 public:
-    Conductor(std::string nickname, std::string nombre, std::string contrasena, std::string email, std::set<TipoLibreta> libs);
+    Conductor(string nickname, string nombre, string contrasena, string email, set<TipoLibreta> libs);
     ~Conductor();
 
-    std::set<DTListarViaje*> listarViajesUsuario();
+    set<DTListarViaje*> listarViajesUsuario();
     bool puedeManejarTipo(TipoVehiculo tipo);
     bool esPasajero();
     void linkVehiculo(Vehiculo* v);
-    std::set<DTVehiculosConductor> listarVehiculos();
+    set<DTVehiculosConductor> listarVehiculos();
     bool hayViajesFecha(DTFecha fecha);
 };
 

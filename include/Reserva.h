@@ -14,15 +14,16 @@ class Reserva {
 private:
     int asientosReservados;
     DTFecha fecha;
-    Pasajero pasajero;
-    Viaje viaje;
-    set<Calificacion> calificaciones;
+    Pasajero* pasajero;
+    Viaje* viaje;
+    set<Calificacion*> calificaciones;
 
 public:
     Reserva(int asientosReservados, DTFecha fecha);
     
     int getAsientosReservados();
     DTFecha getFecha();
+    Pasajero* getPasajero();
 
     DTListarViaje listarViajesReserva();
 
@@ -30,7 +31,7 @@ public:
     bool estaAsociadoViajeACalif(int codigoMem);
 
     //Agrega la calificacion a la coleccion de calificaciones si el codigoMem es el mismo que this->viaje.codigo
-    void linkReservaViaje(int codigoMem, Calificacion calificacion);
+    void linkReservaViaje(int codigoMem, Calificacion *calificacion);
     ~Reserva();
 };
 

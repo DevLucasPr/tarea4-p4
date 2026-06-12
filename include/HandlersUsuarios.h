@@ -10,9 +10,9 @@ class Conductor;
 
 class HandlersUsuarios {
 private:
-	std::set<Usuario*> usuarios;
-	std::set<Pasajero*> pasajeros;
-	std::set<Conductor*> conductores;
+	set<Usuario*> usuarios;
+	set<Pasajero*> pasajeros;
+	set<Conductor*> conductores;
 
 	static HandlersUsuarios* instancia;
 
@@ -21,16 +21,16 @@ private:
 public:
 	~HandlersUsuarios();
 
-	bool existeUsuario(std::string nickname);
+	bool existeUsuario(string nickname);
 	void agregarPasajero(Pasajero* pasajero);
 	void agregarConductor(Conductor* conductor);
-	std::set<Usuario*> listarUsuarios();
-	Usuario* getUsuario(std::string nickname);
-	Pasajero* getPasajero(std::string nickname);
-	Conductor* getConductor(std::string nickname);
-	std::set<DTVehiculosConductor> listarVehiculos(std::string nickname);
-	bool existeCalibreta(std::string nickname,std::string nicknameCalificado,int codigoMem);
-	void crearCalificacion(std::string nicknameCalificado,int calificacion);
+	set<Usuario*> listarUsuarios();
+	Usuario* getUsuario(string nickname);
+	Pasajero* getPasajero(string nickname);
+	Conductor* getConductor(string nickname);
+	set<DTVehiculosConductor> listarVehiculos(string nickname);
+	bool existeCalibreta(string nickname,string nicknameCalificado,int codigoMem);
+	void crearCalificacion(string nicknameCalificado,int calificacion);
 
 	static HandlersUsuarios* getInstance();
 };

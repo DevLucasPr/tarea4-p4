@@ -27,6 +27,7 @@ public:
     string getMatricula();
     int getCapacidad();
     string getMarca();
+    string getModelo();
     TipoVehiculo getTipo();
     DTVehiculosConductor getDTVehiculoConductor();
     Conductor *getConductor();

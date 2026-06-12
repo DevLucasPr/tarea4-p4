@@ -36,7 +36,7 @@ bool Usuario::existeCalificacion(std::string nicknameCalificado, int codigoMem) 
 }
 
 Calificacion* Usuario::calificarUsuario(int puntaje, DTFecha fechaActual) {
-    Calificacion* c = new Calificacion(puntaje, fechaActual);
+    Calificacion* c = new Calificacion(fechaActual, puntaje);
     this->calificacionesRealizadas.insert(c);
     return c;
 }
