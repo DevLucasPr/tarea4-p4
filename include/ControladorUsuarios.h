@@ -1,5 +1,5 @@
-#ifndef CTRLUSUARIOS_H
-#define CTRLUSUARIOS_H
+#ifndef CONTROLADORUSUARIOS_H
+#define CONTROLADORUSUARIOS_H
 
 #include <set>
 #include <string>
@@ -10,18 +10,18 @@
 class DTVehiculosConductor;
 class DTListarViaje;
 
-class CtrlUsuarios {
+class ControladorUsuarios {
 private:
 	int codigoMem;
 	std::string nicknameMem;
-	static CtrlUsuarios* instancia;
+	static ControladorUsuarios* instancia;
 
 	handlerUsuarios* handlerUsuarios;
 
-	CtrlUsuarios();
+	ControladorUsuarios();
 
 public:
-	~CtrlUsuarios();
+	~ControladorUsuarios();
 
 	bool altaPasajero(std::string nickname, std::string nombre, std::string contrasena, std::string email, std::string ci);
 	bool altaConductor(std::string nickname, std::string nombre, std::string contrasena, std::string email, std::set<TipoLibreta> libretas);
@@ -31,7 +31,7 @@ public:
 	std::set<std::string> listarPasajeros();
 	bool calificarUsuario(std::string nicknameCalificado, int calificacion);
 
-	static CtrlUsuarios* getInstance();
+	static ControladorUsuarios* getInstance();
 };
 
 #endif
