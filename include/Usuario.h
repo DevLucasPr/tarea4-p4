@@ -17,6 +17,7 @@ protected:
     set<Calificacion*> calificacionesRealizadas;
     set<Calificacion*> calificacionesRecibidas;
 
+    
 public:
     Usuario(string nickname, string nombre, string contrasena, string email);
     virtual ~Usuario();

@@ -2,6 +2,7 @@
 #define HANDLERSUSUARIOS_H
 
 #include <set>
+#include <map>
 #include <string>
 
 class Usuario;
