@@ -14,9 +14,11 @@ class ControladorUsuarios {
 private:
 	int codigoMem;
 	string nicknameMem;
-	static CtrlUsuarios* instancia;
+	static ControladorUsuarios* instancia;
 
-	handlerUsuarios* handlerUsuarios;
+	HandlerVehiculos *handlerVehiculos;
+    HandlersUsuarios *handlerUsuarios;
+	HandlerViajes *handlerViajes;
 
 	ControladorUsuarios();
 
@@ -31,8 +33,6 @@ public:
 	set<DTListarViaje> listarViajes(string nickname);
 	set<string> listarPasajeros();
 	bool calificarUsuario(string nicknameCalificado, int calificacion);
-
-
 
 	static ControladorUsuarios* getInstance();
 };

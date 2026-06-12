@@ -25,16 +25,16 @@ bool HandlersUsuarios::existeConductor(string nickname) {
 }
 
 void HandlersUsuarios::agregarUsuario(Usuario* usuario) {
-    usuarios[usuario->getNickname()] = usuario;
+    usuarios.insert({usuario->getNickname(), usuario});
 }
 
 void HandlersUsuarios::agregarPasajero(Pasajero* pasajero) {
-    pasajeros[pasajero->getNickname()] = pasajero;
+    pasajeros.insert({pasajero->getNickname(), pasajero});
     agregarUsuario(pasajero);
 }
 
 void HandlersUsuarios::agregarConductor(Conductor* conductor) {
-    conductores[conductor->getNickname()] = conductor;
+    conductores.insert({conductor->getNickname(), conductor});
     agregarUsuario(conductor);
 }
 
