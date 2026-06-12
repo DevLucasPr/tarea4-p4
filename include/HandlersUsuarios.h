@@ -2,6 +2,7 @@
 #define HANDLERSUSUARIOS_H
 
 #include <set>
+#include <map>
 #include <string>
 
 class Usuario;
@@ -10,9 +11,9 @@ class Conductor;
 
 class HandlersUsuarios {
 private:
-	std::set<Usuario*> usuarios;
-	std::set<Pasajero*> pasajeros;
-	std::set<Conductor*> conductores;
+	std::map<std::string, Usuario*> usuarios;
+	std::map<std::string, Pasajero*> pasajeros;
+	std::map<std::string, Conductor*> conductores;
 
 	static HandlersUsuarios* instancia;
 
@@ -20,17 +21,23 @@ private:
 
 public:
 	~HandlersUsuarios();
-
+	
 	bool existeUsuario(std::string nickname);
+	bool existePasajero(std::string nickname);
+	bool existeConductor(std::string nickname);
+	void agregarUsuario(Usuario* usuario);
 	void agregarPasajero(Pasajero* pasajero);
 	void agregarConductor(Conductor* conductor);
-	std::set<Usuario*> listarUsuarios();
+	std::set<std::string> listarUsuarios();
+	std::map<std::string, Usuario*> getUsuarios();
+	std::map<std::string, Pasajero*> getPasajeros();
+	std::map<std::string, Conductor*> getConductores();
 	Usuario* getUsuario(std::string nickname);
 	Pasajero* getPasajero(std::string nickname);
 	Conductor* getConductor(std::string nickname);
-	std::set<DTVehiculosConductor> listarVehiculos(std::string nickname);
-	bool existeCalibreta(std::string nickname,std::string nicknameCalificado,int codigoMem);
-	void crearCalificacion(std::string nicknameCalificado,int calificacion);
+	void eliminarUsuario(std::string nickname);
+	void eliminarPasajero(std::string nickname);
+	void eliminarConductor(std::string nickname);
 
 	static HandlersUsuarios* getInstance();
 };

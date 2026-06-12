@@ -17,6 +17,7 @@ protected:
     std::set<Calificacion*> calificacionesRealizadas;
     std::set<Calificacion*> calificacionesRecibidas;
 
+    
 public:
     Usuario(std::string nickname, std::string nombre, std::string contrasena, std::string email);
     virtual ~Usuario();
