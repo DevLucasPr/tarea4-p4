@@ -70,4 +70,8 @@ void Vehiculo::asociarViaje(Viaje *v){
     viajes.insert({cod, v});
 };
 
+void Vehiculo::desasociarViaje(int codigo) {
+    viajes.erase(codigo);
+}
+
 Vehiculo::~Vehiculo() {};

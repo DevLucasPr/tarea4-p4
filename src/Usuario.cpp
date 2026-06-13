@@ -38,9 +38,17 @@ bool Usuario::existeCalificacion(std::string nicknameCalificado, int codigoMem) 
 Calificacion* Usuario::calificarUsuario(int puntaje, DTFecha fechaActual) {
     Calificacion* c = new Calificacion(fechaActual, puntaje);
     this->calificacionesRealizadas.insert(c);
+    c->linkRealiza(this);    
     return c;
 }
 
 void Usuario::linkCalifica(Calificacion* c) {
     this->calificacionesRecibidas.insert(c);
+}
+
+void Usuario::desvincularRealizada(Calificacion* c) {
+    calificacionesRealizadas.erase(c);
+}
+void Usuario::desvincularRecibida(Calificacion* c) {
+    calificacionesRecibidas.erase(c);
 }

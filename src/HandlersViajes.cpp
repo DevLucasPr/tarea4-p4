@@ -14,8 +14,11 @@ void HandlerViajes::agregarViaje(Viaje *viaje){
     coleccionViajes.insert({viaje->getCodigo(), viaje});
 }
 
-void HandlerViajes::eliminarViaje(int codigo){
-    coleccionViajes.erase(codigo);
+void HandlerViajes::eliminarViaje(int codigo) {
+    Viaje* viaje = coleccionViajes[codigo];
+    viaje->eliminar();  
+    coleccionViajes.erase(coleccionViajes.find(codigo));  
+    delete viaje;   
 }
 
 bool HandlerViajes::existeViaje(int codigoViajes){

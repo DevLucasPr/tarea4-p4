@@ -30,3 +30,7 @@ void Pasajero::linkReserva(int codigoMem, Calificacion* c) {
 void Pasajero::asociarReserva(Reserva* r) {
     this->reservas.insert(r);
 }
+
+void Pasajero::desasociarReserva(Reserva* r) {
+    reservas.erase(r);
+}

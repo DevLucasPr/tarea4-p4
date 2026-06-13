@@ -31,4 +31,14 @@ void Reserva::linkReservaViaje(int codigoMem, Calificacion *calificacion){
     }
 }
 
+void Reserva::eliminar() {
+    // (post. 2 y 3) calificaciones y sus links a los usuarios
+    for (Calificacion* calificacion : calificaciones) {
+        calificacion->eliminar();   // cada calif se quita de los sets de SUS usuarios
+        delete calificacion;
+    }
+    calificaciones.clear();
+    pasajero->desasociarReserva(this);
+}
+
 Reserva::~Reserva() {}

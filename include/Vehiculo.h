@@ -44,6 +44,7 @@ public:
     bool hayViajesFecha(DTFecha fecha);
 
     void asociarViaje(Viaje *v);
+    void desasociarViaje(int codigo);
 
     ~Vehiculo();
 };

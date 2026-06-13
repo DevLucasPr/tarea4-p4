@@ -32,6 +32,8 @@ public:
     bool existeCalificacion(string nicknameCalificado, int codigoMem);
     Calificacion* calificarUsuario(int puntaje, DTFecha fechaActual);
     void linkCalifica(Calificacion* c);
+    void desvincularRealizada(Calificacion* c);
+    void desvincularRecibida(Calificacion* c);
 };
 
 #endif
