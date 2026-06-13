@@ -240,7 +240,7 @@ void Menu::calificarUsuario() {
     IControladorViajes* ctrlViajes = fabrica->getIControladorViajes();
 
     std::set<DTUsuario> usuarios = ctrlUsuarios->listarUsuarios();
-    for (const DTUsuario& usuario : usuarios) {
+    for (DTUsuario usuario : usuarios) {
         std::cout << "> Nickname: " << usuario.getNickname()
                   << ", Nombre: " << usuario.getNombre() << std::endl;
     }
@@ -248,7 +248,7 @@ void Menu::calificarUsuario() {
     std::string nickname;
     std::cout << "Ingrese su nickname: "; std::getline(std::cin, nickname);
     bool nicknameValido = false;
-    for (const DTUsuario& usuario : usuarios) {
+    for (DTUsuario usuario : usuarios) {
         if (usuario.getNickname() == nickname) { nicknameValido = true; break; }
     }
     if (!nicknameValido) {
@@ -257,7 +257,7 @@ void Menu::calificarUsuario() {
     }
 
     std::set<DTListarViaje> viajes = ctrlUsuarios->listarViajes(nickname);
-    for (const DTListarViaje& viaje : viajes) {
+    for (DTListarViaje viaje : viajes) {
         DTFecha fechaViaje = viaje.getFecha();
         std::cout << "> Codigo: " << viaje.getCodigo()
                   << ", Fecha: " << fechaViaje.getDia() << "/" << fechaViaje.getMes() << "/" << fechaViaje.getAnio()
@@ -271,7 +271,7 @@ void Menu::calificarUsuario() {
     std::cout << "Ingrese codigo del viaje: "; std::cin >> codigo;
     std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
     bool codigoValido = false;
-    for (const DTListarViaje& viaje : viajes) {
+    for (DTListarViaje viaje : viajes) {
         if (viaje.getCodigo() == codigo) { codigoValido = true; break; }
     }
     if (!codigoValido) {
@@ -280,7 +280,7 @@ void Menu::calificarUsuario() {
     }
 
     std::set<DTUsuarioViaje> usuariosViaje = ctrlViajes->listarUsuariosViaje(codigo);
-    for (const DTUsuarioViaje& usuarioV : usuariosViaje) {
+    for (DTUsuarioViaje usuarioV : usuariosViaje) {
         std::cout << "> Nickname: " << usuarioV.getNickname()
                   << ", Tipo: " << (usuarioV.getTipo() == TipoUsuario::Pasajero ? "Pasajero" : "Conductor")
                   << std::endl;
@@ -293,7 +293,7 @@ void Menu::calificarUsuario() {
     std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
 
     bool nicknameCalificadoValido = false;
-    for (const DTUsuarioViaje& usuarioV : usuariosViaje) {
+    for (DTUsuarioViaje usuarioV : usuariosViaje) {
         if (nicknameCalificado == usuarioV.getNickname()) { nicknameCalificadoValido = true; break; }
     }
     if (!nicknameCalificadoValido) {
