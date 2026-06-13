@@ -17,7 +17,7 @@ private:
 	static ControladorUsuarios* instancia;
 
 	HandlerVehiculos *handlerVehiculos;
-    HandlersUsuarios *handlerUsuarios;
+    HandlerUsuarios *handlerUsuarios;
 	HandlerViajes *handlerViajes;
 
 	ControladorUsuarios();
@@ -33,6 +33,9 @@ public:
 	set<DTListarViaje> listarViajes(string nickname);
 	set<string> listarPasajeros();
 	bool calificarUsuario(string nicknameCalificado, int calificacion);
+
+	int getCodigoMem();
+	string getNicknameMem();
 
 	static ControladorUsuarios* getInstance();
 };

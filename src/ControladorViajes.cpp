@@ -13,7 +13,7 @@ ControladorViajes::ControladorViajes() {
     ultimoViaje = 0;
 
     this->handlerVehiculos = HandlerVehiculos::getInstance();
-    //this->handlerUsuarios = handlerUsuarios::getInstance();
+    this->handlerUsuarios = handlerUsuarios::getInstance();
     this->handlerViajes = HandlerViajes::getInstance();
 }
 
@@ -72,6 +72,15 @@ set<DTUsuarioViaje> ControladorViajes::listarUsuariosViaje(int codigo) {
     this->codigoMem = codigo;
     return usuariosViaje;
 }
+
+int ControladorViajes::getCodigoMem(){
+    this->codigoMem;
+}
+
+int ControladorViajes::getUltimoViaje(){
+    this->ultimoViaje;
+}
+
 
 set<DTListarViaje> ControladorViajes::listarViajes() {
     set<DTListarViaje> viajesListados;

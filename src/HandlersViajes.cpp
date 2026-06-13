@@ -25,9 +25,10 @@ bool HandlerViajes::existeViaje(int codigoViajes){
     return coleccionViajes.find(codigoViajes) != coleccionViajes.end();
 }
 
-void HandlerViajes::crearViaje(int codigo, DTFecha fecha, string origen, string destino, int asientos, float precio){
+Viaje* HandlerViajes::crearViaje(int codigo, DTFecha fecha, string origen, string destino, int asientos, float precio){
    Viaje* viaje = new Viaje(codigo,fecha, origen, destino, asientos, precio);
    agregarViaje(viaje);
+   return viaje;
 }
 
 map<int, Viaje*> HandlerViajes::getColeccionViaje(){

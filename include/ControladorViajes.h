@@ -45,6 +45,9 @@ public:
 	set<DTUsuarioViaje> listarUsuariosViaje(int codigo);
 	set<DTListarViaje> listarViajes();
 
+	int getCodigoMem();
+	int getUltimoViaje();
+
 	DTDetalleViaje detalleViaje(int codigo);
 
 	void eliminarViaje();
