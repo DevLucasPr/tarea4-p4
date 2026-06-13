@@ -1,5 +1,5 @@
-#ifndef HANDLERSUSUARIOS_H
-#define HANDLERSUSUARIOS_H
+#ifndef HANDLERUSUARIOS_H
+#define HANDLERUSUARIOS_H
 
 #include <set>
 #include <map>
@@ -9,18 +9,18 @@ class Usuario;
 class Pasajero;
 class Conductor;
 
-class HandlersUsuarios {
+class HandlerUsuarios {
 private:
 	std::map<std::string, Usuario*> usuarios;
 	std::map<std::string, Pasajero*> pasajeros;
 	std::map<std::string, Conductor*> conductores;
 
-	static HandlersUsuarios* instancia;
+	static HandlerUsuarios* instancia;
 
-	HandlersUsuarios();
+	HandlerUsuarios();
 
 public:
-	~HandlersUsuarios();
+	~HandlerUsuarios();
 	
 	bool existeUsuario(std::string nickname);
 	bool existePasajero(std::string nickname);
@@ -30,6 +30,7 @@ public:
 	void agregarConductor(Conductor* conductor);
 	std::map<std::string, Usuario*> getUsuarios();
 	std::map<std::string, Pasajero*> getPasajeros();
+	std::set<Pasajero*> listarPasajeros();
 	std::map<std::string, Conductor*> getConductores();
 	Usuario* getUsuario(std::string nickname);
 	Pasajero* getPasajero(std::string nickname);
@@ -38,7 +39,7 @@ public:
 	void eliminarPasajero(std::string nickname);
 	void eliminarConductor(std::string nickname);
 
-	static HandlersUsuarios* getInstance();
+	static HandlerUsuarios* getInstance();
 };
 
 #endif

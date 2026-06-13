@@ -9,7 +9,10 @@ Viaje::Viaje(int codigo, DTFecha fecha, std::string origen, std::string destino,
     this->precio = precio;
 }
 
-int getCodigo();
+int Viaje::getCodigo(){
+    return this->codigo;
+}
+
 DTFecha Viaje::getFecha(){
     return this->fecha;
 }

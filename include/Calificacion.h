@@ -10,8 +10,9 @@ class Calificacion {
 private:
     DTFecha fecha;
     int puntaje;
-    Usuario* usuarioCalificado;     //pseudoatributo para generar la asociacion
-    Reserva* reservaAsociada;       
+    Usuario* usuarioCalificador;    
+    Usuario* usuarioCalificado;     
+    Reserva* reservaAsociada;      
 
 public:
     Calificacion(DTFecha fecha, int puntaje);

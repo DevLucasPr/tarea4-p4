@@ -22,7 +22,7 @@ public:
 	void agregarViaje(Viaje* viaje);
 	void eliminarViaje(int codigo);
 	bool existeViaje(int codigo);
-	void crearViaje(int codigo, DTFecha fecha, string origen, string destino, int asientos, float precio);
+	Viaje* crearViaje(int codigo, DTFecha fecha, string origen, string destino, int asientos, float precio);
 
 	map<int, Viaje*> getColeccionViaje();
 
