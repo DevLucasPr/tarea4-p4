@@ -14,9 +14,11 @@ class ControladorUsuarios {
 private:
 	int codigoMem;
 	string nicknameMem;
-	static CtrlUsuarios* instancia;
+	static ControladorUsuarios* instancia;
 
-	handlerUsuarios* handlerUsuarios;
+	HandlerVehiculos *handlerVehiculos;
+    HandlersUsuarios *handlerUsuarios;
+	HandlerViajes *handlerViajes;
 
 	ControladorUsuarios();
 
@@ -27,6 +29,7 @@ public:
 	bool altaConductor(string nickname, string nombre, string contrasena, string email, set<TipoLibreta> libretas);
 	set<DTVehiculosConductor> listarVehiculosConductor(string nickname);
 	int registrarVehiculo(string nickname, string matricula, int capacidad, string marca, string modelo, TipoVehiculo tipo);
+	set<DTUsuario> listarUsuarios();
 	set<DTListarViaje> listarViajes(string nickname);
 	set<string> listarPasajeros();
 	bool calificarUsuario(string nicknameCalificado, int calificacion);

@@ -70,6 +70,16 @@ int ControladorUsuarios::registrarVehiculo(std::string nickname, std::string mat
     return 0; // Operación exitosa
 }
 
+// Devuelve la información de nickname y nombre de todos los usuarios
+std::set<DTUsuario> ControladorUsuarios::listarUsuarios() {
+    std::set<DTUsuario> usuarios;
+    std::map<std::string, Usuario*> listaUsuarios = HandlersUsuarios::getInstance()->getUsuarios();
+    for (std::map<std::string, Usuario*>::iterator it = listaUsuarios.begin(); it != listaUsuarios.end(); ++it) {
+        usuarios.insert(DTUsuario(it->first, it->second->getNombre()));
+    }
+    return usuarios;
+}
+
 // Devuelve la información de viajes relacionados al usuario pasado
 std::set<DTListarViaje> ControladorUsuarios::listarViajes(std::string nickname) {
     std::set<DTListarViaje> dtViajes;
@@ -84,7 +94,7 @@ std::set<DTListarViaje> ControladorUsuarios::listarViajes(std::string nickname) 
 std::set<std::string> ControladorUsuarios::listarPasajeros() {
     std::set<std::string> pasajeros;
     std::set<Pasajero*> listaPasajeros = HandlersUsuarios::getInstance()->listarPasajeros();
- ¡   for (std::set<Pasajero*>::iterator it = listaPasajeros.begin(); it != listaPasajeros.end(); ++it) {
+    for (std::set<Pasajero*>::iterator it = listaPasajeros.begin(); it != listaPasajeros.end(); ++it) {
         pasajeros.insert((*it)->getNickname());
     }
     return pasajeros;
