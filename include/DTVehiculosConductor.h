@@ -2,18 +2,19 @@
 #define DT_VEHICULOS_CONDUCTOR_H
 
 #include <string>
+using namespace std;
 
 class DTVehiculosConductor {
 private:
   string matricula;
-  string modelo;
+  string marca;
   int capacidad;
 
 public:
-  DTVehiculosConductor(string matricula, string modelo, int capacidad);
+  DTVehiculosConductor(string matricula, string marca, int capacidad);
 
   string getMatricula();
-  string getModelo();
+  string getMarca();
   int getCapacidad();
 };
 
