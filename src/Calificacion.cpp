@@ -1,11 +1,13 @@
 #include "../include/Calificacion.h"
+#include "../include/Usuario.h"
+#include "../include/Reserva.h"
  
 Calificacion::Calificacion(DTFecha fecha, int puntaje) {
     this->fecha = fecha;
     this->puntaje = puntaje;
-    this->usuarioCalificador = nullptr;
-    this->usuarioCalificado = nullptr;
-    this->reservaAsociada = nullptr;
+    this->usuarioCalificador = NULL;
+    this->usuarioCalificado = NULL;
+    this->reservaAsociada = NULL;
 }
  
 Calificacion::~Calificacion() {}
@@ -17,10 +19,10 @@ int Calificacion::getPuntaje(){
 bool Calificacion::existeCalificacion(std::string nicknameCalificado, int codigoMem){
     
     bool existe = false;
-    if(usuarioCalificado != nullptr){
+    if(usuarioCalificado != NULL){
         std:: string nickname = usuarioCalificado->getNickname();
  
-        if((reservaAsociada != nullptr)&&(nickname==nicknameCalificado)){
+        if((reservaAsociada != NULL)&&(nickname==nicknameCalificado)){
             existe= reservaAsociada->estaAsociadoViajeACalif(codigoMem);
         }
     }
@@ -40,8 +42,8 @@ void Calificacion::linkRealiza(Usuario* u) {
 }
  
 void Calificacion::eliminar() {
-    if (usuarioCalificador != nullptr)
+    if (usuarioCalificador != NULL)
         usuarioCalificador->desvincularRealizada(this);
-    if (usuarioCalificado != nullptr)
+    if (usuarioCalificado != NULL)
         usuarioCalificado->desvincularRecibida(this);
 }

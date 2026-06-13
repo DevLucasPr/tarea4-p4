@@ -14,6 +14,8 @@
 #include <set>
 using namespace std;
 
+class Viaje;
+
 class Viaje {
 private:
     int codigo;

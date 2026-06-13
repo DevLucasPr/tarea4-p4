@@ -1,14 +1,14 @@
 #include "../include/CargaDatos.h"
 #include <iostream>
 
-CargaDatos* CargaDatos::instancia = nullptr;
+CargaDatos* CargaDatos::instancia = NULL;
 
 CargaDatos::CargaDatos() {
     datosCargados = false;
 }
 
 CargaDatos* CargaDatos::getInstance() {
-    if (instancia == nullptr) {
+    if (instancia == NULL) {
         instancia = new CargaDatos();
     }
     return instancia;

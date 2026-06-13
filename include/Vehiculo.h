@@ -5,29 +5,29 @@
 #include "DTVehiculosConductor.h"
 #include "DTListarViaje.h"
 #include "Conductor.h"
-#include "Viaje.h"
 #include <string>
 #include <set>
 #include <map>
-using namespace std;
+
+class Viaje;
 
 class Vehiculo {
 private:
-    string matricula;
+    std::string matricula;
     int capacidad;
-    string marca;
-    string modelo;
+    std::string marca;
+    std::string modelo;
     TipoVehiculo tipo;
-    Conductor *conductor;
-    map<int, Viaje *> viajes;
+    Conductor *conductor;    
+    std::map<int, Viaje*> viajes;
 
 public:
-    Vehiculo(string matricula, int capacidad, string marca, string modelo, TipoVehiculo tipo);
+    Vehiculo(std::string matricula, int capacidad, std::string marca, std::string modelo, TipoVehiculo tipo);
 
-    string getMatricula();
+    std::string getMatricula();
     int getCapacidad();
-    string getMarca();
-    string getModelo();
+    std::string getMarca();
+    std::string getModelo();
     TipoVehiculo getTipo();
     DTVehiculosConductor getDTVehiculoConductor();
     Conductor *getConductor();
@@ -35,7 +35,7 @@ public:
     void setConductor(Conductor *conductor);
 
     // Retorna el conjunto viajes de los datavalue del tipo DTListarViaje
-    set<DTListarViaje> listarViajesVehiculo();
+    std::set<DTListarViaje> listarViajesVehiculo();
 
     // Devuelve True en caso de que hayan alugún viaje en la fecha dada asociados al Conductor del Vehiculo 
     bool hayViajesConductor(DTFecha fecha);
