@@ -30,6 +30,14 @@ Vehiculo* Viaje::getVehiculo(){
     return this->vehiculo;
 }
 
+DTDetalleViaje Viaje::getDTDetalleViaje() {
+    DTDetalleVehiculo detalleVehiculo = DTDetalleVehiculo(vehiculo->getMatricula(), vehiculo->getCapacidad(), vehiculo->getMarca(), vehiculo->getModelo(), vehiculo->getTipo());
+    std::vector<DTDetalleReserva> detalleReserva;
+    for (Reserva* reserva : reservas)
+        detalleReserva.push_back(DTDetalleReserva(reserva->getAsientosReservados(), reserva->getFecha(), reserva->getPasajero()->getNickname()));
+    return DTDetalleViaje(codigo, fecha, origen, destino, asientosPublicados, precio, detalleVehiculo, detalleReserva);
+}
+
 void Viaje::setVehiculo(Vehiculo *v){
     this->vehiculo = v;
 }
@@ -76,6 +84,15 @@ bool Viaje::sePuedeReservar(Pasajero* p, int asientos) {
 
 void Viaje::asociarReserva(Reserva *reserva){
     reservas.insert(reserva);
+}
+
+void Viaje::eliminar() {
+    vehiculo->desasociarViaje(this->codigo);
+    for (Reserva* reserva : reservas) {
+        reserva->eliminar();
+        delete reserva;
+    }
+    reservas.clear();
 }
 
 Viaje::~Viaje() {}

@@ -4,6 +4,9 @@
 #include "DTFecha.h"
 #include "DTUsuarioViaje.h"
 #include "DTConsultaViaje.h"
+#include "DTDetalleViaje.h"
+#include "DTDetalleVehiculo.h"
+#include "DTDetalleReserva.h"
 #include "Pasajero.h"
 #include "Reserva.h"
 #include "Vehiculo.h"
@@ -33,6 +36,7 @@ public:
     int getAsientosPublicados();
     float getPrecio();
     Vehiculo* getVehiculo();
+    DTDetalleViaje getDTDetalleViaje();
 
     void setVehiculo(Vehiculo *v);
 
@@ -44,6 +48,7 @@ public:
     bool sePuedeReservar(Pasajero *p, int asientos);
 
     void asociarReserva(Reserva *reserva);
+    void eliminar();
 
     ~Viaje();
 };

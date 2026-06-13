@@ -31,3 +31,14 @@ void Calificacion::linkCalifica(Usuario* usuarioCalificado){
 void Calificacion::linkReserva(Reserva* reservaAsociada){
     this->reservaAsociada= reservaAsociada;
 }
+
+void Calificacion::linkRealiza(Usuario* u) {
+    this->usuarioCalificado = u;
+}
+
+void Calificacion::eliminar() {
+    if (usuarioCalificado != nullptr)
+        usuarioCalificado->desvincularRealizada(this);
+    if (usuarioCalificado != nullptr)
+        usuarioCalificado->desvincularRecibida(this);
+}

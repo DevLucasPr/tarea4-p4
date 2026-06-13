@@ -1,6 +1,6 @@
 #include "../include/ControladorViajes.h"
 #include "../include/ControladorFechaActual.h"
-#include "../include/ControladorUsuario.h"
+#include "../include/ControladorUsuarios.h"
 #include "../include/DTConsultaViaje.h"
 #include "../include/DTFecha.h"
 #include "../include/Fabrica.h"
@@ -79,6 +79,22 @@ set<DTListarViaje> ControladorViajes::listarViajes() {
     for (pair<const int, Viaje*> par : viajes)
         viajesListados.insert(par.second->getDTListarViaje());
     return viajesListados;
+}
+
+DTDetalleViaje ControladorViajes::detalleViaje(int codigo){
+    Viaje* viaje = this->handlerViajes->getViaje(codigo);
+    DTDetalleViaje detalleViaje = viaje->getDTDetalleViaje();   
+    this->codigoMem = codigo;                    
+    return detalleViaje;
+}
+
+void ControladorViajes::eliminarViaje() {
+    this->handlerViajes->eliminarViaje(this->codigoMem);  
+    this->codigoMem = -1;                                 
+}
+
+void ControladorViajes::cancelarEliminarViaje() {
+    this->codigoMem = -1;                                  
 }
 
 ControladorViajes::~ControladorViajes(){

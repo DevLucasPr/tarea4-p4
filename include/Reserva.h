@@ -32,6 +32,9 @@ public:
 
     //Agrega la calificacion a la coleccion de calificaciones si el codigoMem es el mismo que this->viaje.codigo
     void linkReservaViaje(int codigoMem, Calificacion *calificacion);
+
+    void eliminar();
+
     ~Reserva();
 };
 

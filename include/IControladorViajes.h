@@ -20,6 +20,12 @@ class IControladorViajes
 
         virtual set<DTConsultaViaje> consultarViajes(DTFecha fecha, string origen, string destino, int asientos) = 0;
         virtual set<DTUsuarioViaje> listarUsuariosViaje(int codigo) = 0;
+        virtual set<DTListarViaje> listarViajes() = 0;
+        
+        virtual DTDetalleViaje detalleViaje(int codigo) = 0;
+
+        virtual void eliminarViaje() = 0;
+        virtual void cancelarEliminarViaje() = 0;
 
         virtual ~IControladorViajes() = default;
 };
