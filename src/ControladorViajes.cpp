@@ -4,6 +4,7 @@
 #include "../include/DTConsultaViaje.h"
 #include "../include/DTFecha.h"
 #include "../include/Fabrica.h"
+#include "../include/Reserva.h"
 #include <map>
 
 ControladorViajes *ControladorViajes::instancia = nullptr;
