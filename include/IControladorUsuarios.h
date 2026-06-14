@@ -18,7 +18,6 @@ class IControladorUsuarios
     public:
         virtual bool altaPasajero(string nickname, string nombre, string contrasena, string email, string ci) = 0;
         virtual bool altaConductor(string nickname, string nombre, string contrasena, string email, set<TipoLibreta> libretas) = 0;
-        virtual bool altaViaje(string matricula, DTFecha fecha, string origen, string destino, int asientos, float precio) = 0;
 
         virtual int registrarVehiculo(string nickname, string matricula, int capacidad, string marca, string modelo, TipoVehiculo tipoVehiculo) = 0;
 
