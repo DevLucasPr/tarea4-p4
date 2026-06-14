@@ -134,9 +134,11 @@ void Menu::altaViaje() {
     std::cout << "Ingrese nickname del conductor: "; std::getline(std::cin, nickname);
 
     Fabrica* fabrica = Fabrica::getInstance();
-    IControladorViajes* controlador = fabrica->getIControladorViajes();
+    IcontroladorViajes* controladorV = fabrica->getIControladorViajes();
+    IControladorUsuarios* controladorU = fabrica->getIControladorUsuarios();
+    
 
-    std::set<DTVehiculosConductor> vehiculos = controlador->listarVehiculosConductor(nickname);
+    std::set<DTVehiculosConductor> vehiculos = controladorU->listarVehiculosConductor(nickname);
 
     for (DTVehiculosConductor v : vehiculos) {
         std::cout << "> Matricula: " << v.getMatricula()
@@ -162,7 +164,7 @@ void Menu::altaViaje() {
     std::cout << "Ingrese precio por asiento: "; std::cin >> precio;
     std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
 
-    bool viajeOk = controlador->altaViaje(matricula, DTFecha(dia, mes, anio), origen, destino, asientos, precio);
+    bool viajeOk = controladorV->altaViaje(matricula, DTFecha(dia, mes, anio), origen, destino, asientos, precio);
     if (viajeOk) std::cout << "Viaje registrado exitosamente.\n";
     else std::cout << "Error al registrar el viaje.\n";
 }
