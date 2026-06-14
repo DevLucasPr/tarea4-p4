@@ -128,6 +128,7 @@ bool ControladorUsuarios::calificarUsuario(std::string nicknameCalificado, int c
 
     // el calificador crea la Calificacion (link realiza) y el calificado la recibe (link califica)
     Calificacion* c = calificador->calificarUsuario(calificacion, fechaActual);
+    c->linkCalifica(calificado);  
     calificado->linkCalifica(c);
 
     // se conecta la calificacion con la Reserva del viaje correspondiente:
