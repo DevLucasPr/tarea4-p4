@@ -4,11 +4,11 @@
 #include "DTFecha.h"
 #include "DTListarViaje.h"
 #include "Pasajero.h"
-#include "Viaje.h"
 #include "Calificacion.h"
 #include <set>
 
 using namespace std;
+class Viaje;
 
 class Reserva {
 private:

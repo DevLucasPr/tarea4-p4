@@ -4,6 +4,7 @@
 #include "Usuario.h"
 #include <string>
 #include <set>
+#include "../include/Viaje.h"
 
 class Reserva;
 
@@ -20,7 +21,7 @@ public:
     bool esPasajero();
     void linkReserva(int codigoMem, Calificacion* c);
     void asociarReserva(Reserva* r);
-    void desasociarReserva(Reserva* r){}
+    void desasociarReserva(Reserva* r);
 };
 
 #endif

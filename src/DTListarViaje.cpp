@@ -13,3 +13,7 @@ DTFecha DTListarViaje::getFecha() { return fecha; }
 std::string DTListarViaje::getOrigen() { return origen; }
 std::string DTListarViaje::getDestino() { return destino; }
 std::string DTListarViaje::getConductor() { return conductor; }
+
+bool DTListarViaje::operator<(const DTListarViaje& otro) const {
+    return codigo < otro.codigo;
+}

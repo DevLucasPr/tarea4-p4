@@ -12,7 +12,7 @@ class Vehiculo;
 
 class HandlerVehiculos {
 private:
-	map<int, Vehiculo*> coleccionVehiculos;
+	map<string, Vehiculo*> coleccionVehiculos;
 	static HandlerVehiculos* instancia;
 	HandlerVehiculos();
 
@@ -20,6 +20,7 @@ public:
 	static HandlerVehiculos* getInstance();
 
 	void agregarVehiculo(Vehiculo* Vehiculo);
+	Vehiculo* crearVehiculo(string matricula, int capacidad, string marca, string modelo, TipoVehiculo tipo);
 	void eliminarVehiculo(string matricula);
 	bool existeVehiculo(string matricula);
 

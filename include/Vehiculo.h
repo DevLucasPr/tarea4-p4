@@ -5,11 +5,11 @@
 #include "DTVehiculosConductor.h"
 #include "DTListarViaje.h"
 #include "Conductor.h"
-#include "Viaje.h"
 #include <string>
 #include <set>
 #include <map>
 using namespace std;
+class Viaje;
 
 class Vehiculo {
 private:

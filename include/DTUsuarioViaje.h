@@ -3,6 +3,7 @@
 
 #include "TipoUsuario.h"
 #include <string>
+using namespace std;
 
 class DTUsuarioViaje {
 private:
@@ -14,6 +15,8 @@ public:
 
     string getNickname();
     TipoUsuario getTipo();
+
+    bool operator<(const DTUsuarioViaje& otro) const;
 };
 
 #endif

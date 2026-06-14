@@ -17,3 +17,7 @@ string DTVehiculosConductor::getMarca() {
 int DTVehiculosConductor::getCapacidad() {
     return this->capacidad;
 }
+
+bool DTVehiculosConductor::operator<(const DTVehiculosConductor& otro) const {
+    return matricula < otro.matricula;
+}

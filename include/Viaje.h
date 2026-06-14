@@ -7,12 +7,12 @@
 #include "DTDetalleViaje.h"
 #include "DTDetalleVehiculo.h"
 #include "DTDetalleReserva.h"
-#include "Pasajero.h"
-#include "Reserva.h"
 #include "Vehiculo.h"
 #include <string>
 #include <set>
 using namespace std;
+class Reserva;
+class Pasajero;
 
 class Viaje {
 private:
@@ -49,6 +49,7 @@ public:
 
     void asociarReserva(Reserva *reserva);
     void eliminar();
+    DTListarViaje getDTListarViaje();
 
     ~Viaje();
 };

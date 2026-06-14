@@ -2,6 +2,7 @@
 #define DT_USUARIO_H
 
 #include <string>
+using namespace std;
 
 class DTUsuario {
 private:
@@ -13,6 +14,8 @@ public:
 
     string getNickname();
     string getNombre();
+
+    bool operator<(const DTUsuario& otro) const;
 };
 
 #endif

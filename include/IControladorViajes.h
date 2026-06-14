@@ -6,6 +6,8 @@
 #include "DTConsultaViaje.h"
 #include "DTFecha.h"
 #include "DTUsuarioViaje.h"
+#include "DTDetalleViaje.h"
+#include "DTListarViaje.h"
 
 #include <string>
 #include <set>
