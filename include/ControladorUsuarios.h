@@ -33,6 +33,7 @@ public:
 
 	bool altaPasajero(string nickname, string nombre, string contrasena, string email, string ci);
 	bool altaConductor(string nickname, string nombre, string contrasena, string email, set<TipoLibreta> libretas);
+	bool altaViaje(string matricula, DTFecha fecha, string origen, string destino, int asientos, float precio);
 	set<DTVehiculosConductor> listarVehiculosConductor(string nickname);
 	int registrarVehiculo(string nickname, string matricula, int capacidad, string marca, string modelo, TipoVehiculo tipo);
 	set<DTUsuario> listarUsuarios();
