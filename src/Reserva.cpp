@@ -3,6 +3,8 @@
 Reserva::Reserva(int asientosReservados, DTFecha fecha) {
     this->asientosReservados = asientosReservados;
     this->fecha = fecha;
+    this->pasajero = nullptr;
+    this->viaje = nullptr;
 }
 
 int Reserva::getAsientosReservados(){
@@ -28,6 +30,7 @@ bool Reserva::estaAsociadoViajeACalif(int codigoMem){
 void Reserva::linkReservaViaje(int codigoMem, Calificacion *calificacion){
     if (viaje->getCodigo() == codigoMem) {
         calificaciones.insert(calificacion);
+        calificacion->linkReserva(this);
     }
 }
 
@@ -39,6 +42,14 @@ void Reserva::eliminar() {
     }
     calificaciones.clear();
     pasajero->desasociarReserva(this);
+}
+
+void Reserva::setPasajero(Pasajero* pasajero) {
+    this->pasajero = pasajero;
+}
+
+void Reserva::setViaje(Viaje* viaje) {
+    this->viaje = viaje;
 }
 
 Reserva::~Reserva() {}

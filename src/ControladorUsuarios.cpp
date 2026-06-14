@@ -80,10 +80,13 @@ int ControladorUsuarios::registrarVehiculo(std::string nickname, std::string mat
 // Devuelve la información de nickname y nombre de todos los usuarios
 std::set<DTUsuario> ControladorUsuarios::listarUsuarios() {
     std::set<DTUsuario> usuarios;
-    std::map<std::string, Usuario*> listaUsuarios = HandlerUsuarios::getInstance()->getUsuarios();
-    for (std::map<std::string, Usuario*>::iterator it = listaUsuarios.begin(); it != listaUsuarios.end(); ++it) {
-        usuarios.insert(DTUsuario(it->first, it->second->getNombre()));
-    }
+    HandlerUsuarios* hu = HandlerUsuarios::getInstance();
+    std::map<std::string, Conductor*> conductores = hu->getConductores();
+    for (std::map<std::string, Conductor*>::iterator it = conductores.begin(); it != conductores.end(); ++it)
+        usuarios.insert(DTUsuario(it->first, it->second->getNombre(), 0));
+    std::map<std::string, Pasajero*> pasajeros = hu->getPasajeros();
+    for (std::map<std::string, Pasajero*>::iterator it = pasajeros.begin(); it != pasajeros.end(); ++it)
+        usuarios.insert(DTUsuario(it->first, it->second->getNombre(), 1));
     return usuarios;
 }
 
@@ -128,6 +131,7 @@ bool ControladorUsuarios::calificarUsuario(std::string nicknameCalificado, int c
 
     // el calificador crea la Calificacion (link realiza) y el calificado la recibe (link califica)
     Calificacion* c = calificador->calificarUsuario(calificacion, fechaActual);
+    c->linkCalifica(calificado);  
     calificado->linkCalifica(c);
 
     // se conecta la calificacion con la Reserva del viaje correspondiente:

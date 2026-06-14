@@ -24,6 +24,8 @@ public:
     int getAsientosReservados();
     DTFecha getFecha();
     Pasajero* getPasajero();
+    void setPasajero(Pasajero* pasajero);
+    void setViaje(Viaje* viaje);
 
     DTListarViaje listarViajesReserva();
 

@@ -10,6 +10,7 @@
 #include "Vehiculo.h"
 #include <string>
 #include <set>
+#include <vector>
 using namespace std;
 class Reserva;
 class Pasajero;
@@ -23,7 +24,7 @@ private:
     int asientosPublicados;
     float precio;
 
-    set<Reserva*> reservas;
+    vector<Reserva*> reservas;
     Vehiculo* vehiculo;
 
 public:

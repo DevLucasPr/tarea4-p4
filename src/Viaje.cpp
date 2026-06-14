@@ -49,14 +49,15 @@ void Viaje::setVehiculo(Vehiculo *v){
 
 set<DTUsuarioViaje> Viaje::listarUsuariosViaje(string nicknameExcluido) {
     set<DTUsuarioViaje> usuariosViaje;
+    int orden = 0;
     string nicknameConductor = vehiculo->getConductor()->getNickname();
     if (nicknameConductor != nicknameExcluido)
-        usuariosViaje.insert(DTUsuarioViaje(nicknameConductor, TipoUsuario::Conductor));
+        usuariosViaje.insert(DTUsuarioViaje(nicknameConductor, TipoUsuario::Conductor, orden++));
 
     for (Reserva* r : reservas) {
         string nicknamePasajero = r->getPasajero()->getNickname();
         if (nicknamePasajero != nicknameExcluido)
-            usuariosViaje.insert(DTUsuarioViaje(nicknamePasajero, TipoUsuario::Pasajero));
+            usuariosViaje.insert(DTUsuarioViaje(nicknamePasajero, TipoUsuario::Pasajero, orden++));
     }
     return usuariosViaje;
 }
@@ -67,14 +68,13 @@ bool Viaje::filtroViaje(DTFecha fecha, string origen, string destino){
 
 bool Viaje::asientosDisp(int asientos){
     int asientosReservados = 0;
-    set<Reserva*>::iterator it;
-    for (it = reservas.begin(); it != reservas.end(); ++it)
-        asientosReservados += (*it)->getAsientosReservados();
+    for (Reserva* r : reservas)
+        asientosReservados += r->getAsientosReservados();
     return ((asientosPublicados - asientosReservados) >= asientos);
 }
 
 DTConsultaViaje Viaje::obtenerViajes(int asientos){
-    return DTConsultaViaje(codigo, vehiculo->getMarca(), vehiculo->getModelo(), vehiculo->getConductor()->getNickname(), vehiculo->getConductor()->getCalificacionProm(), precio * asientos);
+    return DTConsultaViaje(codigo, vehiculo->getMarca(), vehiculo->getModelo(), vehiculo->getConductor()->getNombre(), vehiculo->getConductor()->getCalificacionProm(), precio * asientos);
 } 
 
 bool Viaje::sePuedeReservar(Pasajero* p, int asientos) {
@@ -88,7 +88,7 @@ bool Viaje::sePuedeReservar(Pasajero* p, int asientos) {
 }
 
 void Viaje::asociarReserva(Reserva *reserva){
-    reservas.insert(reserva);
+    reservas.push_back(reserva);
 }
 
 void Viaje::eliminar() {

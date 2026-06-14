@@ -9,9 +9,11 @@ class DTUsuarioViaje {
 private:
     string nickname;
     TipoUsuario tipo;
+    int orden;   
 
 public:
     DTUsuarioViaje(string nickname, TipoUsuario tipo);
+    DTUsuarioViaje(string nickname, TipoUsuario tipo, int orden);
 
     string getNickname();
     TipoUsuario getTipo();

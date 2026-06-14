@@ -45,8 +45,7 @@ void Menu::altaUsuario() {
         std::string ci;
         std::cout << "Ingrese CI: "; std::getline(std::cin, ci);
         usuarioOk = controlador->altaPasajero(nickname, nombre, contrasena, email, ci);
-        if (usuarioOk) std::cout << "Pasajero creado exitosamente.\n";
-        else std::cout << "Ya existe un usuario con ese nickname.\n";
+        if (!usuarioOk) std::cout << "Ya existe un usuario con ese nickname.\n";
 
     } else if (tipoUsuario == 2) {
         bool tieneMotoProfesional = false, tieneMotoAmateur = false;
@@ -95,8 +94,6 @@ void Menu::altaUsuario() {
         usuarioOk = controlador->altaConductor(nickname, nombre, contrasena, email, libretas);
         if (!usuarioOk) {
             std::cout << "Ya existe un usuario con ese nickname.\n";
-        } else {
-            std::cout << "Conductor creado exitosamente.\n";
         }
 
         int agregarVehiculo = 1;
@@ -141,7 +138,7 @@ void Menu::altaViaje() {
 
     for (DTVehiculosConductor v : vehiculos) {
         std::cout << "> Matricula: " << v.getMatricula()
-                  << ", Marca: " << v.getMarca()
+                  << ", Modelo: " << v.getModelo()
                   << ", Capacidad: " << v.getCapacidad() << "\n";
     }
 
@@ -354,11 +351,11 @@ void Menu::eliminarViaje() {
     DTDetalleViaje detalleViaje = controladorViajes->detalleViaje(codigo);
     DTDetalleVehiculo detalleVehiculo = detalleViaje.getVehiculo();
     std::cout << ">> Viaje <<\n"
-              << "--- Matrícula: " << detalleVehiculo.getMatricula()
+              << "--- Codigo: " << detalleViaje.getCodigo()
               << ", Fecha: " << detalleViaje.getFecha().getDia() << "/" << detalleViaje.getFecha().getMes() << "/" << detalleViaje.getFecha().getAnio()
               << ", Origen: " << detalleViaje.getOrigen()
               << ", Destino: " << detalleViaje.getDestino()
-              << ", Capacidad: " << detalleViaje.getAsientosPublicados()
+              << ", AsientosPublicados: " << detalleViaje.getAsientosPublicados()
               << ", Precio por asiento: " << detalleViaje.getPrecio() << "\n"
               << ">> Vehiculo <<\n"
               << "--- Matricula: " << detalleVehiculo.getMatricula()

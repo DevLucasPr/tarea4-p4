@@ -7,14 +7,14 @@ using namespace std;
 class DTVehiculosConductor {
 private:
   string matricula;
-  string marca;
+  string modelo;
   int capacidad;
 
 public:
-  DTVehiculosConductor(string matricula, string marca, int capacidad);
+  DTVehiculosConductor(string matricula, string modelo, int capacidad);
 
   string getMatricula();
-  string getMarca();
+  string getModelo();
   int getCapacidad();
   bool operator<(const DTVehiculosConductor& otro) const;
 };

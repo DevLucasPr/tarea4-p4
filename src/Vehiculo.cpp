@@ -31,7 +31,7 @@ TipoVehiculo Vehiculo::getTipo(){
 };
 
 DTVehiculosConductor Vehiculo::getDTVehiculoConductor(){
-    return DTVehiculosConductor(this->matricula, this->marca, this->capacidad);
+    return DTVehiculosConductor(this->matricula, this->modelo, this->capacidad);
 };
 
 Conductor *Vehiculo::getConductor(){
