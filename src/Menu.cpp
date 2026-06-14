@@ -134,7 +134,7 @@ void Menu::altaViaje() {
     std::cout << "Ingrese nickname del conductor: "; std::getline(std::cin, nickname);
 
     Fabrica* fabrica = Fabrica::getInstance();
-    IcontroladorViajes* controladorV = fabrica->getIControladorViajes();
+    IControladorViajes* controladorV = fabrica->getIControladorViajes();
     IControladorUsuarios* controladorU = fabrica->getIControladorUsuarios();
     
 
