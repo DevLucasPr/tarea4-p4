@@ -35,6 +35,8 @@ bool ControladorViajes::generarReserva(string nickname, int codigo, int asientos
 
     DTFecha fechaActual = Fabrica::getInstance()->getIControladorFechaActual()->getFecha();
     Reserva* reserva = new Reserva(asientos, fechaActual);
+    reserva->setPasajero(pasajeroReserva);
+    reserva->setViaje(viajeReserva);
     viajeReserva->asociarReserva(reserva);
     pasajeroReserva->asociarReserva(reserva);
     return true;

@@ -44,4 +44,12 @@ void Reserva::eliminar() {
     pasajero->desasociarReserva(this);
 }
 
+void Reserva::setPasajero(Pasajero* pasajero) {
+    this->pasajero = pasajero;
+}
+
+void Reserva::setViaje(Viaje* viaje) {
+    this->viaje = viaje;
+}
+
 Reserva::~Reserva() {}
