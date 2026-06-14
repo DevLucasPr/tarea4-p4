@@ -135,6 +135,7 @@ void Menu::altaViaje() {
 
     Fabrica* fabrica = Fabrica::getInstance();
     IControladorUsuarios* controlador = fabrica->getIControladorUsuarios();
+    IControladorViajes* controladorViajes = fabrica->getIControladorViajes();
 
     std::set<DTVehiculosConductor> vehiculos = controlador->listarVehiculosConductor(nickname);
 
@@ -162,7 +163,7 @@ void Menu::altaViaje() {
     std::cout << "Ingrese precio por asiento: "; std::cin >> precio;
     std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
 
-    bool viajeOk = controlador->altaViaje(matricula, DTFecha(dia, mes, anio), origen, destino, asientos, precio);
+    bool viajeOk = controladorViajes->altaViaje(matricula, DTFecha(dia, mes, anio), origen, destino, asientos, precio);
     if (viajeOk) std::cout << "Viaje registrado exitosamente.\n";
     else std::cout << "Error al registrar el viaje.\n";
 }
