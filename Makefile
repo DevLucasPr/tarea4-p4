@@ -21,7 +21,7 @@ $(ODIR):
 	mkdir -p $(ODIR)
 
 entrega:
-	tar -czvf 03_lab4.tar.gz $(SRCS) $(IDIR) Makefile
+	tar -czvf 03_parte2_lab4.tar.gz $(SRCS) $(IDIR) Makefile
 
 clean:
 	rm -rf $(ODIR) $(BIN)
