@@ -141,7 +141,7 @@ void Menu::altaViaje() {
 
     for (DTVehiculosConductor v : vehiculos) {
         std::cout << "> Matricula: " << v.getMatricula()
-                  << ", Marca: " << v.getMarca()
+                  << ", Marca: " << v.getModelo()
                   << ", Capacidad: " << v.getCapacidad() << "\n";
     }
 

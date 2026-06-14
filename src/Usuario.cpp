@@ -20,7 +20,7 @@ std::string Usuario::getNombre() {
 
 float Usuario::getCalificacionProm() {
     if (calificacionesRecibidas.empty())
-        return 0;
+        return 5;
     float suma = 0;
     for (Calificacion* c : calificacionesRecibidas)
         suma += c->getPuntaje();

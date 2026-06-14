@@ -1,8 +1,8 @@
 #include "../include/DTVehiculosConductor.h"
 
-DTVehiculosConductor::DTVehiculosConductor(string matricula, string marca, int capacidad) {
+DTVehiculosConductor::DTVehiculosConductor(string matricula, string modelo, int capacidad) {
     this->matricula = matricula;
-    this->marca = marca;
+    this->modelo = modelo;
     this->capacidad = capacidad;
 }
 
@@ -10,8 +10,8 @@ string DTVehiculosConductor::getMatricula() {
     return this->matricula;
 }
 
-string DTVehiculosConductor::getMarca() {
-    return this->marca;
+string DTVehiculosConductor::getModelo() {
+    return this->modelo;
 }
 
 int DTVehiculosConductor::getCapacidad() {

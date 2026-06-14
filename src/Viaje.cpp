@@ -74,7 +74,7 @@ bool Viaje::asientosDisp(int asientos){
 }
 
 DTConsultaViaje Viaje::obtenerViajes(int asientos){
-    return DTConsultaViaje(codigo, vehiculo->getMarca(), vehiculo->getModelo(), vehiculo->getConductor()->getNickname(), vehiculo->getConductor()->getCalificacionProm(), precio * asientos);
+    return DTConsultaViaje(codigo, vehiculo->getMarca(), vehiculo->getModelo(), vehiculo->getConductor()->getNombre(), vehiculo->getConductor()->getCalificacionProm(), precio * asientos);
 } 
 
 bool Viaje::sePuedeReservar(Pasajero* p, int asientos) {
