@@ -1,16 +1,22 @@
 #ifndef CONTROLADORUSUARIOS_H
 #define CONTROLADORUSUARIOS_H
 
+#include "IControladorUsuarios.h"
 #include <set>
 #include <string>
+using namespace std;
 
 #include "TipoLibreta.h"
 #include "TipoVehiculo.h"
 
 class DTVehiculosConductor;
 class DTListarViaje;
+class DTUsuario;
+class HandlerVehiculos;
+class HandlerUsuarios;
+class HandlerViajes;
 
-class ControladorUsuarios {
+class ControladorUsuarios : public IControladorUsuarios {
 private:
 	int codigoMem;
 	string nicknameMem;

@@ -8,3 +8,6 @@ DTUsuarioViaje::DTUsuarioViaje(std::string nickname, TipoUsuario tipo)
 
 std::string DTUsuarioViaje::getNickname() { return nickname; }
 TipoUsuario DTUsuarioViaje::getTipo() { return tipo; }
+bool DTUsuarioViaje::operator<(const DTUsuarioViaje& otro) const {
+    return nickname < otro.nickname;
+}

@@ -8,3 +8,8 @@ DTUsuario::DTUsuario(std::string nickname, std::string nombre)
 
 std::string DTUsuario::getNickname() { return nickname; }
 std::string DTUsuario::getNombre() { return nombre; }
+
+
+bool DTUsuario::operator<(const DTUsuario& otro) const {
+    return nickname < otro.nickname;
+}

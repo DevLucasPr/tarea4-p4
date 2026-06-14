@@ -8,12 +8,12 @@ Conductor::Conductor(std::string nickname, std::string nombre, std::string contr
 
 Conductor::~Conductor() {}
 
-std::set<DTListarViaje*> Conductor::listarViajesUsuario() {
-    std::set<DTListarViaje*> resultado;
+std::set<DTListarViaje> Conductor::listarViajesUsuario() {
+    std::set<DTListarViaje> resultado;
     for (Vehiculo* v : vehiculos) {
         std::set<DTListarViaje> viajesV = v->listarViajesVehiculo();
         for (DTListarViaje dt : viajesV) {
-            resultado.insert(new DTListarViaje(dt.getCodigo(), dt.getFecha(), dt.getOrigen(), dt.getDestino(), dt.getConductor()));
+            resultado.insert(dt);
         }
     }
     return resultado;

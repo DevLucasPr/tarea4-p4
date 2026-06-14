@@ -3,6 +3,7 @@
 
 #include "DTFecha.h"
 #include <string>
+using namespace std;
 
 class DTConsultaViaje {
 private:
@@ -22,6 +23,8 @@ public:
   string getConductor();
   float getCalificacionProm();
   float getPrecioTotal();
+
+  bool operator<(const DTConsultaViaje& otro) const;
 };
 
 #endif

@@ -1,4 +1,6 @@
 #include "../include/Viaje.h"
+#include "../include/Reserva.h"
+
 
 Viaje::Viaje(int codigo, DTFecha fecha, std::string origen, std::string destino, int asientosPublicados, float precio) {
     this->codigo = codigo;
@@ -96,6 +98,10 @@ void Viaje::eliminar() {
         delete reserva;
     }
     reservas.clear();
+}
+
+DTListarViaje Viaje::getDTListarViaje() {
+    return DTListarViaje(codigo, fecha, origen, destino, vehiculo->getConductor()->getNickname());
 }
 
 Viaje::~Viaje() {}

@@ -22,6 +22,7 @@ public:
     string getOrigen();
     string getDestino();
     string getConductor();
+    bool operator<(const DTListarViaje& otro) const;
 
 };
 

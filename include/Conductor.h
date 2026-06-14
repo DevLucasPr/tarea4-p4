@@ -19,7 +19,7 @@ public:
     Conductor(string nickname, string nombre, string contrasena, string email, set<TipoLibreta> libs);
     ~Conductor();
 
-    set<DTListarViaje*> listarViajesUsuario();
+    set<DTListarViaje> listarViajesUsuario();
     bool puedeManejarTipo(TipoVehiculo tipo);
     bool esPasajero();
     void linkVehiculo(Vehiculo* v);

@@ -16,6 +16,7 @@ public:
   string getMatricula();
   string getMarca();
   int getCapacidad();
+  bool operator<(const DTVehiculosConductor& otro) const;
 };
 
 #endif

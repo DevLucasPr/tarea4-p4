@@ -13,7 +13,7 @@ ControladorViajes::ControladorViajes() {
     ultimoViaje = 0;
 
     this->handlerVehiculos = HandlerVehiculos::getInstance();
-    this->handlerUsuarios = handlerUsuarios::getInstance();
+    this->handlerUsuarios = HandlerUsuarios::getInstance();
     this->handlerViajes = HandlerViajes::getInstance();
 }
 
@@ -22,6 +22,7 @@ ControladorViajes* ControladorViajes::getInstance(){
     {
         instancia = new ControladorViajes();
     }
+    return instancia;
 }
 
 bool ControladorViajes::generarReserva(string nickname, int codigo, int asientos){
@@ -74,11 +75,11 @@ set<DTUsuarioViaje> ControladorViajes::listarUsuariosViaje(int codigo) {
 }
 
 int ControladorViajes::getCodigoMem(){
-    this->codigoMem;
+    return this->codigoMem;
 }
 
 int ControladorViajes::getUltimoViaje(){
-    this->ultimoViaje;
+    return this->ultimoViaje;
 }
 
 
