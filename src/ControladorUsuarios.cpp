@@ -116,27 +116,19 @@ std::set<std::string> ControladorUsuarios::listarPasajeros() {
 //PRE: Existe en memoria el nickname del usuario calificador y el código del viaje, el valor de calificación es válido (entre 1 y 5)
 //PRE: Existe el usuario a calificar, existe una instancia de viaje con el código dado, el usuario calificado es distinto al usuario calificador, el usuario calificado participó en el viaje dado.
 bool ControladorUsuarios::calificarUsuario(std::string nicknameCalificado, int calificacion) {
-    // el codigo del viaje lo guardo CtrlViajes en su memoria (listarUsuariosViaje)
     int codigoViaje = ControladorViajes::getInstance()->getCodigoMem();
-
     Usuario* calificador = HandlerUsuarios::getInstance()->getUsuario(this->nicknameMem);
     Usuario* calificado  = HandlerUsuarios::getInstance()->getUsuario(nicknameCalificado);
 
-    // si ya existe una calificacion de este calificador hacia ese usuario por ese viaje -> false
     if (calificador->existeCalificacion(nicknameCalificado, codigoViaje)) {
         return false;
     }
 
     DTFecha fechaActual = Fabrica::getInstance()->getIControladorFechaActual()->getFecha();
-
-    // el calificador crea la Calificacion (link realiza) y el calificado la recibe (link califica)
     Calificacion* c = calificador->calificarUsuario(calificacion, fechaActual);
     c->linkCalifica(calificado);  
     calificado->linkCalifica(c);
 
-    // se conecta la calificacion con la Reserva del viaje correspondiente:
-    // - si el calificador es Pasajero, la reserva es la de el (recorre SUS reservas)
-    // - si el calificador es Conductor, la reserva es la del Pasajero calificado
     if (calificador->esPasajero()) {
         ((Pasajero*) calificador)->linkReserva(codigoViaje, c);
     } else {
@@ -155,4 +147,10 @@ std::string ControladorUsuarios::getNicknameMem() {
 
 int ControladorUsuarios::getCodigoMem() {
     return this->codigoMem;
+}
+void ControladorUsuarios::destroy() {
+    if (instancia != nullptr) {
+        delete instancia;
+        instancia = nullptr;
+    }
 }

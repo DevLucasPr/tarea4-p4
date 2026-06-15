@@ -10,11 +10,15 @@ HandlerUsuarios* HandlerUsuarios::instancia = nullptr;
 HandlerUsuarios::HandlerUsuarios() {}
 
 HandlerUsuarios::~HandlerUsuarios() {
-
+    for (map<string, Usuario*>::iterator it = usuarios.begin(); it != usuarios.end(); ++it)
+        delete it->second;
+    usuarios.clear();
+    pasajeros.clear();
+    conductores.clear();
 }
 
 bool HandlerUsuarios::existeUsuario(string nickname) {
-    return usuarios.find(nickname) != usuarios.end(); // forma correcta en un map
+    return usuarios.find(nickname) != usuarios.end(); 
 }
 
 bool HandlerUsuarios::existePasajero(string nickname) {
@@ -105,4 +109,10 @@ HandlerUsuarios* HandlerUsuarios::getInstance() {
         instancia = new HandlerUsuarios();
     }
     return instancia;
+}
+void HandlerUsuarios::destroy() {
+    if (instancia != nullptr) {
+        delete instancia;
+        instancia = nullptr;
+    }
 }

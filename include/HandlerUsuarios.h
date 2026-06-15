@@ -40,6 +40,7 @@ public:
 	void eliminarConductor(std::string nickname);
 
 	static HandlerUsuarios* getInstance();
+	static void destroy();
 };
 
 #endif

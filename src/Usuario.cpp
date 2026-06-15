@@ -8,7 +8,11 @@ Usuario::Usuario(std::string nickname, std::string nombre, std::string contrasen
     this->email = email;
 }
 
-Usuario::~Usuario() {}
+Usuario::~Usuario() {
+    for (Calificacion* c : calificacionesRealizadas)
+        delete c;
+    calificacionesRealizadas.clear();
+}
 
 std::string Usuario::getNickname() {
     return this->nickname;
