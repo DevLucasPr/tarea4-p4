@@ -44,6 +44,7 @@ public:
 	string getNicknameMem();
 
 	static ControladorUsuarios* getInstance();
+	static void destroy();
 };
 
 #endif

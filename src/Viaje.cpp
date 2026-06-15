@@ -104,4 +104,8 @@ DTListarViaje Viaje::getDTListarViaje() {
     return DTListarViaje(codigo, fecha, origen, destino, vehiculo->getConductor()->getNickname());
 }
 
-Viaje::~Viaje() {}
+Viaje::~Viaje() {
+    for (Reserva* r : reservas)
+        delete r;
+    reservas.clear();
+}

@@ -13,12 +13,11 @@ private:
 
     CargaDatos();
 
-    void cargarCalificacion(IControladorUsuarios* cu, IControladorViajes* cv,
-                            std::string nickname, int codigo,
-                            std::string nicknameCalificado, int calificacion);
+    void cargarCalificacion(IControladorUsuarios* cu, IControladorViajes* cv, std::string nickname, int codigo, std::string nicknameCalificado, int calificacion);
 
 public:
     static CargaDatos* getInstance();
+    static void destroy();
     void cargarDatos();
 };
 

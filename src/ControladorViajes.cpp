@@ -113,3 +113,9 @@ void ControladorViajes::cancelarEliminarViaje() {
 
 ControladorViajes::~ControladorViajes(){
 }
+void ControladorViajes::destroy() {
+    if (instancia != nullptr) {
+        delete instancia;
+        instancia = nullptr;
+    }
+}

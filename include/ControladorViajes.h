@@ -30,6 +30,7 @@ private:
 
 public:
 	static ControladorViajes *getInstance();
+	static void destroy();
 	
 	//Crear un nuevo viaje en el sistema con los datos proporcionados relacionandolo
 	//con el vehículo y notificar si se pudo crear con éxito.

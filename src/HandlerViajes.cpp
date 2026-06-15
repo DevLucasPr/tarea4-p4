@@ -44,3 +44,9 @@ HandlerViajes::~HandlerViajes(){
         delete it->second;
     this->coleccionViajes.clear();
 }
+void HandlerViajes::destroy() {
+    if (instancia != nullptr) {
+        delete instancia;
+        instancia = nullptr;
+    }
+}
